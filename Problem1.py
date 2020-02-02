@@ -18,7 +18,7 @@ mu2, sigma2 = 10, 5
 sample2 = np.random.normal(mu2, sigma2, sample_size)
 
 #('full', 'same', 'valid')
-sum_of_distributions = np.convolve(sample1, sample2, 'same')
+sum_of_distributions = sample1 + sample2 
 
 #Draw histogram plot
 plt.hist(sum_of_distributions)
