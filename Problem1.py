@@ -22,6 +22,9 @@ sum_of_distributions = sample1 + sample2
 
 #Draw histogram plot
 plt.hist(sum_of_distributions)
+plt.title('Histogram of Distribution')
+plt.ylabel('Frequency')
+plt.xlabel('Data')
 
 #Estimation of mean and stan
 n, bins = np.histogram(sum_of_distributions)
