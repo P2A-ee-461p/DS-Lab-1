@@ -8,6 +8,9 @@ data = pd.read_csv('PatientData.csv', header=None)
 
 datanp = data.to_numpy()
 
+print('Number of patients: ', datanp.shape[0])
+print('Number of features: ', datanp.shape[1])
+
 des = data.describe()
 desnp = des.to_numpy()
 #print(des)
@@ -31,29 +34,25 @@ for y in range(datanp.shape[0]):
 
 datanp = datanp.astype(float)
 
-cs = []
-
-for feature in range(datanp.shape[1]):
-	x = datanp[:, feature]
-	y = datanp[:, -1]
-
-	c = np.cov(x, y)
-	cs.append(c[0][1])
-
-	#plt.scatter(x, y)
-	#plt.show()
-
-cs = np.array(cs)
 
 c2 = np.cov(datanp.transpose())
 c2 = c2[:, -1]
+c2 = np.abs(c2)
 
-print(np.argmax(c2))
+featnum = np.argmax(c2)
+argsort = np.argsort(c2)
+argsort = np.flip(argsort)
+print(featnum)
+print(argsort)
 
-x = datanp[:, np.argmax(c2)]
-y = datanp[:, -1]
-plt.scatter(x,y)
-plt.show()
+print("Highly correlated features: ", argsort[:3])
+
+#print(c2[argsort])
+
+# x = datanp[:, np.argmax(c2)]
+# y = datanp[:, -1]
+# plt.scatter(x,y)
+# plt.show()
 
 
 

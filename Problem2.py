@@ -32,18 +32,21 @@ samples250 = [genZn(250) for i in range(1000)]
 
 plt.subplot(1, 3, 1)
 plt.hist(samples10, density=True, bins=30)
-plt.title('Title')
-plt.ylabel('Probability')
+plt.title('1000 samples of Z_10')
+plt.xlabel('Zn value')
+plt.ylabel('Frequency')
 
 
 plt.subplot(1, 3, 2)
 plt.hist(samples50, density=True, bins=30)
-plt.title('Title')
-plt.ylabel('Probability')
+plt.title('1000 samples of Z_50')
+plt.xlabel('Zn value')
+plt.ylabel('Frequency')
 
 plt.subplot(1, 3, 3)
 plt.hist(samples250, density=True, bins=30)
-plt.title('Title')
-plt.ylabel('Probability')
+plt.title('1000 samples of Z_250')
+plt.xlabel('Zn value')
+plt.ylabel('Frequency')
 
 plt.show()

@@ -6,6 +6,11 @@ def projectOntoPlane(basis1, basis2, v):
 	planev = v-orthoComp
 	return planev
 
-print(projectOntoPlane([1,1,1], [1,0,0], [3,3,3]))
-print(projectOntoPlane([1,1,1], [1,0,0], [1,2,3]))
-print(projectOntoPlane([1,1,1], [1,0,0], [0,0,3]))
+plane1 = [1,1,1]
+plane2 = [1,0,0]
+
+print("normal: ", np.cross(plane1, plane2))
+
+print(projectOntoPlane(plane1, plane2, [3,3,3]))
+print(projectOntoPlane(plane1, plane2, [1,2,3]))
+print(projectOntoPlane(plane1, plane2, [0,0,1]))
